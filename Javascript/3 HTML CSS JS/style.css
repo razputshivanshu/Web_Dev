@@ -1,0 +1,24 @@
+.c{
+  background-color: aqua;
+  margin: 30px;
+}
+
+#i{
+  background-color: blueviolet;
+}
+
+.add{
+  margin-top: 10px;
+  height: 25px;
+  padding: 0 15px;
+  background-color:yellowgreen;
+  border-radius: 5px;
+  border: none;
+}
+
+.wish{
+  height: 25px;
+  width: 150px;
+  border-radius: 5px;
+
+}
