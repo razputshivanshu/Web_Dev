@@ -9,3 +9,5 @@ function printAndIncreaseCount(){
 
 
 setInterval(printAndIncreaseCount, 1000);
+
+//done counter
