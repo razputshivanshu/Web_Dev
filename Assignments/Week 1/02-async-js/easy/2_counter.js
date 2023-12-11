@@ -10,3 +10,5 @@ function printAndIncrease(){
 for(let i =1;i<=1000;i++){
   setTimeout(printAndIncrease,i*1000);
 }
+
+//done counter without setInterval
