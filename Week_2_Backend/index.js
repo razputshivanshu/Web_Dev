@@ -19,7 +19,18 @@ function sum(counter){
 
 }
 
-console.log(sum(counter));
+
+function mul(counter){
+  let muli=1;
+  for(let i=1;i<=counter;i++){
+    muli*=i;
+  }
+
+  return muli;
+
+}
+
+
 
 
 
@@ -29,6 +40,7 @@ const app = express()
 const port = 3000
 
 app.use(bodyParser.json());
+//this is used to read from the body.
 
 
 
@@ -44,12 +56,34 @@ app.use(bodyParser.json());
 function handleFirstReq(req,res){
   // var counter = req.query.counter;
   // var counter = req.headers.counter;
-  console.log(req.body);
+  // console.log(req.body);
   // console.log(req.headers);
+
+  var counter = req.body.counter;
+
+  if(counter<1000000){
+  
   var calculatedSum = sum(counter);
+  var multiplication = mul(counter);
+
+
+
+  var answerObject = {
+    sum: calculatedSum,
+    multi: multiplication
+  }
+
   // console.log(calculatedSum);
   var Answer = "the sum is: "+calculatedSum;
-  res.send(Answer);
+  // res.status(404).send(Answer);
+  // res.send(Answer);
+  res.send("Json Answer of sum is:   " + answerObject.sum + "\n" + "Json answer multiplication is:  " + answerObject.multi);
+  // res.send("Json file Aswer is: " + answerObject);
+ 
+  }
+  else{
+    res.status(404).send("error occured!!! The input number is too large.");
+  }
 }
 
 
